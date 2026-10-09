@@ -1,7 +1,6 @@
 - **Họ và tên:** Nguyễn Thị Thanh Thu
 - **Mã số sinh viên:** 24IT264
 - **Môn học:** Lập trình Hệ thống (System Programming)
-- **Môi trường thực thi:** NetBSD 10.1 (Oracle VirtualBox)
 
 ---
 
