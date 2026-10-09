@@ -2,8 +2,6 @@
 - **Mã số sinh viên:** 24IT264
 - **Môn học:** Lập trình Hệ thống (System Programming)
 - **Tên Repository GitHub:** NguyenThiThanhThu_24IT264_midterm
-- **Báo cáo:** [NguyenThiThanhThu_24IT264_midterm/NguyenThiThanhThu_24IT264_midterm.pdf](url)
-
 ---
 
 ## 1. Tổng quan dự án
