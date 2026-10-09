@@ -1,4 +1,4 @@
-# Midterm Project: Implementation of UNIX ls(1)
+<img width="823" height="606" alt="image" src="https://github.com/user-attachments/assets/5b556224-7246-43bf-99ce-5e575c6f8b31" /># Midterm Project: Implementation of UNIX ls(1)
 
 - **Họ và tên:** Nguyễn Thị Thanh Thu
 - **Mã số sinh viên:** 24IT264
@@ -107,24 +107,57 @@ make clean
 ### 5.3. Định dạng chi tiết (Long format: `-l` và `-n`)
 - **Tùy chọn `-l` (Hiển thị chi tiết quyền, owner/group dưới dạng tên, dung lượng, thời gian, tên file):**
   - **Cách gõ:** `./ls -l`
-  - **Kết quả đầu ra mẫu:**
-    ```text
-    total 32
-    -rw-r--r--  1 student  student       284 Oct  9 13:47 Makefile
-    -rw-r--r--  1 student  student      2743 Oct  9 13:47 README.md
-    -rw-r--r--  1 student  student      4281 Oct  9 13:47 display.c
-    -rw-r--r--  1 student  student       569 Oct  9 13:47 main.c
-    ```
-- **Tùy chọn `-n` (Tương tự `-l` nhưng hiển thị UID và GID dạng số):**
-  - **Cách gõ:** `./ls -n`
-  - **Kết quả đầu ra mẫu:**
-    ```text
-    total 32
-    -rw-r--r--  1 1000     1000          284 Oct  9 13:47 Makefile
-    -rw-r--r--  1 1000     1000         2743 Oct  9 13:47 README.md
-    -rw-r--r--  1 1000     1000         4281 Oct  9 13:47 display.c
-    -rw-r--r--  1 1000     1000          569 Oct  9 13:47 main.c
-    ```
+- **Kết quả đầu ra mẫu:**
+```text
+total 276
+-rw-r--r-- 1 apue     users          284 Oct  8 22:51 Makefile
+-rw-rw-r-- 1 apue     users         8980 Oct  9 18:38 README.md
+-rw-r--r-- 1 apue     users         4281 Oct  8 22:59 display.c
+-rw-r--r-- 1 apue     users          168 Oct  8 22:54 display.h
+-rw-r--r-- 1 apue     users        16968 Oct  9 20:18 display.o
+-rw-r--r-- 1 apue     users         3309 Oct  9 02:52 entry.c
+-rw-r--r-- 1 apue     users          936 Oct  9 19:26 entry.h
+-rw-r--r-- 1 apue     users        13256 Oct  9 20:17 entry.o
+-rwxr-xr-x 1 apue     users        41464 Oct  9 20:18 ls
+-rw-r--r-- 1 apue     users          569 Oct  8 23:01 main.c
+-rw-r--r-- 1 apue     users         4872 Oct  9 20:17 main.o
+-rw-r--r-- 1 apue     users         1200 Oct  9 16:33 my_out.txt
+-rw-r--r-- 1 apue     users         1873 Oct  8 22:32 options.c
+-rw-r--r-- 1 apue     users         1096 Oct  8 22:25 options.h
+-rw-r--r-- 1 apue     users         7120 Oct  9 20:17 options.o
+-rw-r--r-- 1 apue     users         1366 Oct  8 22:56 sort.c
+-rw-r--r-- 1 apue     users          176 Oct  8 22:56 sort.h
+-rw-r--r-- 1 apue     users         8368 Oct  9 20:17 sort.o
+-rw-r--r-- 1 apue     users         1048 Oct  9 16:33 sys_out.txt
+```
+    
+#### . Tùy chọn `-n`
+Tương tự như tùy chọn định dạng dài, nhưng thay vì hiển thị tên người sở hữu và tên nhóm bằng chữ, hệ thống sẽ hiển thị bằng **ID người dùng (UID)** và **ID nhóm (GID)** dưới dạng số.
+
+- **Cách gõ:** `./ls -n`
+- **Kết quả đầu ra mẫu:**
+```text
+total 276
+-rw-r--r-- 1 1000     100          284 Oct  8 22:51 Makefile
+-rw-rw-r-- 1 1000     100         8980 Oct  9 18:38 README.md
+-rw-r--r-- 1 1000     100         4281 Oct  8 22:59 display.c
+-rw-r--r-- 1 1000     100          168 Oct  8 22:54 display.h
+-rw-r--r-- 1 1000     100        16968 Oct  9 20:18 display.o
+-rw-r--r-- 1 1000     100         3309 Oct  9 02:52 entry.c
+-rw-r--r-- 1 1000     100          936 Oct  9 19:26 entry.h
+-rw-r--r-- 1 1000     100        13256 Oct  9 20:17 entry.o
+-rwxr-xr-x 1 1000     100        41464 Oct  9 20:18 ls
+-rw-r--r-- 1 1000     100          569 Oct  8 23:01 main.c
+-rw-r--r-- 1 1000     100         4872 Oct  9 20:17 main.o
+-rw-r--r-- 1 1000     100         1200 Oct  9 16:33 my_out.txt
+-rw-r--r-- 1 1000     100         1873 Oct  8 22:32 options.c
+-rw-r--r-- 1 1000     100         1096 Oct  8 22:25 options.h
+-rw-r--r-- 1 1000     100         7120 Oct  9 20:17 options.o
+-rw-r--r-- 1 1000     100         1366 Oct  8 22:56 sort.c
+-rw-r--r-- 1 1000     100          176 Oct  8 22:56 sort.h
+-rw-r--r-- 1 1000     100         8368 Oct  9 20:17 sort.o
+-rw-r--r-- 1 1000     100         1048 Oct  9 16:33 sys_out.txt
+```
 
 ---
 
@@ -135,9 +168,17 @@ make clean
   ```text
   Makefile
   README.md
-  build/
+  display.c
+  display.h
+  entry.c
+  entry.h
   ls*
   main.c
+  options.c
+  options.h
+  sort.c
+  sort.h
+  
   ```
 
 ---
@@ -147,10 +188,25 @@ make clean
   - **Cách gõ:** `./ls -lh`
   - **Kết quả đầu ra mẫu:**
     ```text
-    total 32
-    -rw-r--r--  1 student  student     284B Oct  9 13:47 Makefile
-    -rw-r--r--  1 student  student     2.7K Oct  9 13:47 README.md
-    -rw-r--r--  1 student  student     4.2K Oct  9 13:47 display.c
+     total 272
+    -rw-r--r-- 1 apue     users         284B Oct  8 22:51 Makefile
+    -rw-rw-r-- 1 apue     users         8.8K Oct  9 18:38 README.md
+    -rw-r--r-- 1 apue     users         4.2K Oct  8 22:59 display.c
+    -rw-r--r-- 1 apue     users         168B Oct  8 22:54 display.h
+    -rw-r--r-- 1 apue     users        16.6K Oct  9 22:11 display.o
+    -rw-r--r-- 1 apue     users         3.2K Oct  9 02:52 entry.c
+    -rw-r--r-- 1 apue     users         936B Oct  9 19:26 entry.h
+    -rw-r--r-- 1 apue     users        12.9K Oct  9 22:11 entry.o
+    -rwxr-xr-x 1 apue     users        40.5K Oct  9 22:11 ls
+    -rw-r--r-- 1 apue     users         569B Oct  8 23:01 main.c
+    -rw-r--r-- 1 apue     users         4.8K Oct  9 22:11 main.o
+    -rw-r--r-- 1 apue     users         1.8K Oct  8 22:32 options.c
+    -rw-r--r-- 1 apue     users         1.1K Oct  8 22:25 options.h
+    -rw-r--r-- 1 apue     users         7.0K Oct  9 22:11 options.o
+    -rw-r--r-- 1 apue     users         1.3K Oct  8 22:56 sort.c
+    -rw-r--r-- 1 apue     users         176B Oct  8 22:56 sort.h
+    -rw-r--r-- 1 apue     users         8.2K Oct  9 22:11 sort.o
+    drwxr-xr-x 3 apue     users         512B Oct  9 21:09 test_dir
     ```
 - **Tùy chọn `-k` (Hiển thị block sizes / dung lượng theo Kilobytes):**
   - **Cách gõ:** `./ls -sk`
