@@ -1,6 +1,7 @@
 - **Họ và tên:** Nguyễn Thị Thanh Thu
 - **Mã số sinh viên:** 24IT264
 - **Môn học:** Lập trình Hệ thống (System Programming)
+- **Tên Repository GitHub:** NguyenThiThanhThu_24IT264_midterm
 
 ---
 
