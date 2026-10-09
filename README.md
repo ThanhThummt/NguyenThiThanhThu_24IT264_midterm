@@ -1,5 +1,3 @@
-<img width="823" height="606" alt="image" src="https://github.com/user-attachments/assets/5b556224-7246-43bf-99ce-5e575c6f8b31" /># Midterm Project: Implementation of UNIX ls(1)
-
 - **Họ và tên:** Nguyễn Thị Thanh Thu
 - **Mã số sinh viên:** 24IT264
 - **Môn học:** Lập trình Hệ thống (System Programming)
